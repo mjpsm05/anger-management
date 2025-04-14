@@ -8,7 +8,7 @@ import re
 PINECONE_API_KEY = st.secrets["pinecone"]["api-key"]
 INDEX_NAME = "anger-management-pdf"
 HUGGINGFACE_API_TOKEN = st.secrets["huggingface"]["api-key"]
-MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
+MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.1"
 HF_API_URL = f"https://api-inference.huggingface.co/models/{MODEL_NAME}"
 
 # --- Initialization ---
@@ -91,4 +91,6 @@ if query:
         answer = search_and_generate_answer(query)
         print(answer)
         st.markdown(answer.replace('\n', '  \n'))
+
+
 
